@@ -1,5 +1,6 @@
 # Contributors
 
-Guillaume
-David
-Geoffrey
+Guillaume Domergue
+David Duveau
+Geoffrey Boiffils
+Sebastien Manolios
