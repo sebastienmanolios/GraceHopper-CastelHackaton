@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const userCred = JSON.parse(localStorage.getItem("user"));
+// const userCred = JSON.parse(localStorage.getItem("user"));
 
 const apiClient = axios.create({
-  baseURL: "http://localhost:8081/villes",
+  baseURL: "http://localhost:8081/cities",
   withCredentials: false,
   headers: {
     Accept: "application/json",
@@ -12,7 +12,7 @@ const apiClient = axios.create({
 });
 
 export default {
-  getCars() {
+  getCities() {
     return apiClient.get("/");
   },
 
