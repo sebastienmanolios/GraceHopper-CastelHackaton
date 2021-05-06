@@ -10,6 +10,7 @@
     <l-tile-layer
       :url="url"
    >
+    </l-tile-layer>
   </l-map>
 </template>
 
