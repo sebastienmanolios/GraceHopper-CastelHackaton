@@ -9,6 +9,7 @@
 </template>
 
 <script>
+
 import AppNavBar from '@/components/AppNavBar.vue';
 import AppFooter from '@/components/AppFooter.vue';
 
