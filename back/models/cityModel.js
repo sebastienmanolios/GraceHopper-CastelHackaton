@@ -1,24 +1,25 @@
 const mongoose = require("mongoose");
 
 const citySchema = new mongoose.Schema(
-    {
-      name: { type: String, required: true },
-      qualIndex: { type: Number, required: true },
-      qualLabel: { type: String, required: true },
-      o3Index: { type: Number },
-      no2Index: { type: Number},
-      so2Index: { type: Number },
-      pm10Index: { type: Number },
-      pm25Index: { type: Number }
-    },
-    {
-      timestamps: true,
-    }
-  );
+  {
+    X: { type: Number, required: true },
+    Y: { type: Number, required: true },
+    lib_zone: { type: String, required: true },
+    code_qual: { type: Number, required: true },
+    lib_qual: { type: String, required: true },
+    code_o3: { type: Number },
+    code_no2: { type: Number },
+    code_so2: { type: Number },
+    code_pm10: { type: Number },
+    code_pm25: { type: Number },
+  },
+  {
+    timestamps: true,
+  }
+);
 
 const City = mongoose.model("City", citySchema);
 module.exports = City;
-
 
 /** 
  * "villes": [
