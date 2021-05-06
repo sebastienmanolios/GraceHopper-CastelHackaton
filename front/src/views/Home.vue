@@ -16,17 +16,36 @@
         <AppSearch />
       </v-col>
     </v-row>
+    <v-row>
+      <v-col>
+        <!-- <p v-for="(city, index) in cities" :key="index">
+          {{ city }}
+        </p> -->
+        <p> {{ cities [0]}}
+        <p>frf</p>
+      </v-col>
+    </v-row>
+        
   </v-container>
 </template>
 
 <script>
 
 import AppSearch from '@/components/AppSearch.vue';
+import { mapState } from 'vuex'
+
 
 export default {
   components: {
     AppSearch
   },
+  created() {
+    this.$store.dispatch('setCities')
+  },
+  computed: {
+    ...mapState(['cities'])
+  }
+
 };
 
 

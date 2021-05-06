@@ -3,7 +3,7 @@ import axios from "axios";
 // const userCred = JSON.parse(localStorage.getItem("user"));
 
 const apiClient = axios.create({
-  baseURL: "http://localhost:8081/cities",
+  baseURL: "http://localhost:5500",
   withCredentials: false,
   headers: {
     Accept: "application/json",
