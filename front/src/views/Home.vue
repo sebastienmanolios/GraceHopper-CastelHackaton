@@ -21,8 +21,12 @@
         <!-- <p v-for="(city, index) in cities" :key="index">
           {{ city }}
         </p> -->
-        <p> {{ cities [0]}}
-        <p>frf</p>
+        <p> {{ cities [0]}}</p>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col>
+        <AppTable />
       </v-col>
     </v-row>
         
@@ -30,14 +34,15 @@
 </template>
 
 <script>
-
+import AppTable from '@/components/AppTable.vue';
 import AppSearch from '@/components/AppSearch.vue';
 import { mapState } from 'vuex'
 
 
 export default {
   components: {
-    AppSearch
+    AppSearch,
+    AppTable
   },
   created() {
     this.$store.dispatch('setCities')
