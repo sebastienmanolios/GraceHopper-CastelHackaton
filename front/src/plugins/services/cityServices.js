@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const userCred = JSON.parse(localStorage.getItem("user"));
+// const userCred = JSON.parse(localStorage.getItem("user"));
 
 const apiClient = axios.create({
-  baseURL: "http://localhost:8081/villes",
+  baseURL: "http://localhost:8081/cities",
   withCredentials: false,
   headers: {
     Accept: "application/json",
@@ -12,15 +12,23 @@ const apiClient = axios.create({
 });
 
 export default {
-  getCars() {
-    return apiClient.get("/");
+  getCities() {
+    return apiClient.get("/cities");
   },
 
-  // addCar(data) {
-  //   return apiClient.post("/car", data, {
-  //     headers: {
-  //       Authorization: `Bearer ${userCred.token}`,
-  //     },
-  //   });
-  // }
+  getOneCityByName(cityName) {
+    return apiClient.get("cities/" + cityName);
+  },
+
+  addOneCity(cityData) {
+    return apiClient.post(
+      "/city",
+      cityData
+      // {
+      //   headers: {
+      //     Authorization: `Bearer ${userCred.token}`,
+      //   },
+      // }
+    );
+  },
 };

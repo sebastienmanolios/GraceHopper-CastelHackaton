@@ -1,5 +1,5 @@
 {
-  "villes": [
+  "cities": [
     {
       "id": 1,
       "name": "Montpellier",
@@ -16,8 +16,9 @@
     {
       "id": 2,
       "name": "Perols",
-      "qualIndex": 2,
-      "qualLabel": "Moyen",
+      "timeStamp": null,
+      "qualIndex": 1,
+      "qualLabel": "Bon",
       "o3Index": "0.23454",
       "no2Index":"0.63454",
       "so2Index":"0.13454",
