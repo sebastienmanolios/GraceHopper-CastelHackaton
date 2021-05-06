@@ -1,19 +1,19 @@
 <template>
-  <l-map :center="center"
-   :zoom="zoom"
-   class="map"
-   ref="map"
-   @update:zoom="zoomUpdated"
-   @update:center="centerUpdated"
+  <l-map
+    :center="center"
+    :zoom="zoom"
+    class="map"
+    ref="map"
+    @update:zoom="zoomUpdated"
+    @update:center="centerUpdated"
   >
     <l-tile-layer
-     :url="url"
+      :url="url"
    >
   </l-map>
 </template>
 
 <script>
-  // import L from 'leaflet'; 
   import { LMap, LTileLayer, LMarker } from 'vue2-leaflet';
   import "leaflet/dist/leaflet.css";
 
@@ -27,9 +27,16 @@
 
     data() {
       return {
-        url: 'http://tile.openstreetmap.fr/?layers=B00000000FFFFFF',
+        url: 'https://{s}tile.openstreetmap..fr/?layers=B00000000FFFFFF',
         center: [ 49.1193089, 6.1757156 ],
         zoom: 12,
+        markers: [
+          {id: 1, coordinates: [ 49.114910, 6.178810 ]},
+          {id: 2, coordinates: [ 49.133290, 6.154370 ]},
+          {id: 3, coordinates: [ 49.102160, 6.158850 ]},
+          {id: 4, coordinates: [ 49.136010, 6.199630 ]},
+          {id: 5, coordinates: [ 49.105563, 6.182234 ]},
+        ]
       }
     },
 
