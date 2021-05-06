@@ -29,7 +29,7 @@
 
 <style lang="scss" scoped>
   .marker-icon {
-    height: 50px;
+    height: 25px;
     width: auto;
  }
 

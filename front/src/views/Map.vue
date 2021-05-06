@@ -1,5 +1,5 @@
 <template>
-  <div id="map">
+  <div id="mapContainer">
     <l-map
       :center="center"
       :zoom="zoom"
@@ -35,13 +35,9 @@
       return {
         url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
         center: [ 43.610769, 3.876716 ],
-        zoom: 12,
+        zoom: 10,
         markers: [
-          {id: 1, imageUrl: 'https://img.icons8.com/doodle/48/000000/fish-food--v1.png', coordinates: [ 49.114910, 6.178810 ]},
-          {id: 2, imageUrl: 'https://img.icons8.com/doodle/48/000000/pizza--v1.png' ,coordinates: [ 49.133290, 6.154370 ]},
-          {id: 3, imageUrl: 'https://img.icons8.com/doodle/48/000000/croissant--v1.png', coordinates: [ 49.102160, 6.158850 ]},
-          {id: 4, imageUrl: 'https://img.icons8.com/doodle/48/000000/the-toast--v2.png', coordinates: [ 49.136010, 6.199630 ]},
-          {id: 5, imageUrl: 'https://img.icons8.com/doodle/48/000000/hamburger.png', coordinates: [ 49.105563, 6.182234 ]},
+          {id: 1, imageUrl: 'http://getdrawings.com/free-icon/red-dot-icon-53.png', coordinates: [ 43.610769, 3.876716 ]},
         ]
       }
     },
@@ -66,7 +62,7 @@
 <style lang="scss" scoped>
   .map {
     position: absolute;
-    width: 100%;
+    width: 75%;
     height: 100%;
     overflow :hidden
   }
