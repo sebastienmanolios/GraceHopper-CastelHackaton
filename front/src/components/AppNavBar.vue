@@ -49,6 +49,10 @@
                 label:'Signup',
                 url:'/signup'
               },
+              {
+                label: 'Map',
+                url: '/map'
+              }
             ]     
           }
     },
