@@ -13,14 +13,22 @@ const apiClient = axios.create({
 
 export default {
   getCities() {
-    return apiClient.get("/");
+    return apiClient.get("/cities");
   },
 
-  // addCar(data) {
-  //   return apiClient.post("/car", data, {
-  //     headers: {
-  //       Authorization: `Bearer ${userCred.token}`,
-  //     },
-  //   });
-  // }
+  getOneCityByName(cityName) {
+    return apiClient.get("cities/" + cityName);
+  },
+
+  addOneCity(cityData) {
+    return apiClient.post(
+      "/city",
+      cityData
+      // {
+      //   headers: {
+      //     Authorization: `Bearer ${userCred.token}`,
+      //   },
+      // }
+    );
+  },
 };
