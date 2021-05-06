@@ -4,10 +4,10 @@
       <thead >
         <tr>
           <th class="text-left" style="font-size: 1.4rem" >
-            Name
+            Composant
           </th>
           <th class="text-left" style="font-size: 1.4rem">
-            Calories
+            Taux
           </th>
         </tr>
       </thead>
@@ -17,7 +17,7 @@
           :key="item.name"
         >
           <td>{{ item.name }}</td>
-          <td>{{ item.calories }}</td>
+          <td>{{ item.rate }}</td>
           
         </tr>
       </tbody>
@@ -27,28 +27,38 @@
 
 <script>
   export default {
+    props: {
+      city: {
+        type: Object,
+        required: true
+      }
+    },
     data() {
       return {
         data: [
           {
-            name: 'Frozen Yogurt',
-            calories: 159,
+            name: `Qualité de l'air`,
+            rate: 159,
           },
           {
-            name: 'Ice cream sandwich',
-            calories: 237,
+            name: 'O3',
+            rate: 262,
           },
           {
-            name: 'Eclair',
-            calories: 262,
+            name: 'NO2',
+            rate: 305,
           },
           {
-            name: 'Cupcake',
-            calories: 305,
+            name: 'SO2',
+            rate: 356,
           },
           {
-            name: 'Gingerbread',
-            calories: 356,
+            name: 'PM10',
+            rate: 356,
+          },
+          {
+            name: 'PM25',
+            rate: 356,
           },
          
         ],

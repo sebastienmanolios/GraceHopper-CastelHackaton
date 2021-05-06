@@ -7,9 +7,20 @@
       mt-9
       >
         <h1 class="display-2 font-weight-bold mb-3 mt-10 text-center">
-          Welcome to our App
+          Installer vous en OCCITANIE
         </h1>
       </v-col>
+    </v-row>
+    <v-row>
+       <v-col
+        class="mb-5"
+        cols="12"
+      >
+        <h2 class="headline mb-9 mt-9">
+          Nous vous proposons de juger par vous même des conditions agréables de notre belle région
+        </h2>
+        <h2>Pick your city !</h2>
+        </v-col>
     </v-row>
     <v-row>
       <v-col>
@@ -21,13 +32,15 @@
         <!-- <p v-for="(city, index) in cities" :key="index">
           {{ city }}
         </p> -->
-        <p> {{ cities [0]}}</p>
+        <p> {{ cities [1]}}</p>
       </v-col>
     </v-row>
     <v-row>
       <v-col>
         <AppTable />
       </v-col>
+      <v-col> </v-col>
+      <v-col> </v-col>
     </v-row>
         
   </v-container>
