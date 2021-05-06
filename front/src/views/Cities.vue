@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import { mapState } from 'vue';
+  import { mapState } from 'vuex';
 
   export default {
     data() {

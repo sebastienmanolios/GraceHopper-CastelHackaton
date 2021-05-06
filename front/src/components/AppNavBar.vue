@@ -43,9 +43,9 @@
           }
     },
     computed: {
-        showMenu() {
-            return this.toggleMenu || this.$vuetify.breakpoint.mdAndUp
-        }
+        // showMenu() {
+        //     return this.toggleMenu || this.$vuetify.breakpoint.mdAndUp
+        // }
     }
   }
 </script>
