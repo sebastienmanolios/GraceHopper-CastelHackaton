@@ -1,0 +1,29 @@
+{
+  "cities": [
+    {
+      "id": 1,
+      "name": "Montpellier",
+      "timeStamp": null,
+      "qualIndex": 2,
+      "qualLabel": "Moyen",
+      "o3Index": "1.23454",
+      "no2Index":"1.63454",
+      "so2Index":"0.93454",
+      "pm10Index":"0.854",
+      "pm25Index":"0.7454"
+    },
+
+    {
+      "id": 2,
+      "name": "Perols",
+      "timeStamp": null,
+      "qualIndex": 1,
+      "qualLabel": "Bon",
+      "o3Index": "0.23454",
+      "no2Index":"0.63454",
+      "so2Index":"0.13454",
+      "pm10Index":"0.54",
+      "pm25Index":"0.454"
+    }
+  ]
+}
