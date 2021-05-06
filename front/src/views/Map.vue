@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
   <div id="map">
     <l-map
       :center="center"
@@ -16,6 +17,21 @@
       />
     </l-map>
   </div>
+=======
+  <l-map
+    :center="center"
+    :zoom="zoom"
+    class="map"
+    ref="map"
+    @update:zoom="zoomUpdated"
+    @update:center="centerUpdated"
+  >
+    <l-tile-layer
+      :url="url"
+   >
+    </l-tile-layer>
+  </l-map>
+>>>>>>> 85c6a5fc3eb43e42431ed1e6de89edc82e741d0a
 </template>
 
 <script>
