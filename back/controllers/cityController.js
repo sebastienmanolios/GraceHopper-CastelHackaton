@@ -11,19 +11,28 @@ const getCities = async (req, res, next) => {
 };
 
 //GET {id}
-const getById = async(req, res) => {
-    try{
-        let lib_zone = req.body.lib_zone;
-        const city = await City.findOne({lib_zone});
-        console.log(city);
-        res.status(200);
-    } catch(err) {
-        res.send(err);
-        console.log(err);
-    }
-    
-    
-}
+// const getById = async(req, res) => {
+//     try{
+//         let lib_zone = req.body.lib_zone;
+//         const city = await City.findOne({lib_zone});
+//         console.log(city);
+//         res.status(200);
+//     } catch(err) {
+//         res.send(err);
+//         console.log(err);
+//     }    
+// }
+const getById = (req, res) => {
+    let lib_zone = req.params.lib_zone;
+    Book.findOne({lib_zone: lib_zone}, (err, data) =>{
+        if(err || !data){
+            return res.json({message: ' doesnt exist'})
+        } else {
+            return res.json(data);
+        }
+    })
+};
+
 // UPDATE (NOT working)
 const updateCity = (req, res) => {
     let lib_zone = req.params.lib_zone;

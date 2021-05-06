@@ -6,4 +6,5 @@ const { updateCity, getCities, getById } = require("../controllers/cityControlle
 router.get("/cities", getCities);
 router.put("/city", updateCity);
 router.get("/city", getById);
+router.get('/book/:lib_zone', getById);
 module.exports = router;
