@@ -1,9 +1,11 @@
 <template>
   <nav>
-    <v-app-bar app color="primary" dark>
-      <v-toolbar-title>Vuetify Dashboard</v-toolbar-title>
+    <v-app-bar app dark style="background: #565857;">
+      <v-toolbar-title style="font-size: 2rem"
+      >Air Cities</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn 
+        large
         v-for="(link, index) in links"
         :key="index"
         text 
@@ -24,10 +26,6 @@
               {
                 label:'Home',
                 url:'/'
-              },
-              {
-                label:'About',
-                url:'/about'
               },
               {
                 label:'Login',
