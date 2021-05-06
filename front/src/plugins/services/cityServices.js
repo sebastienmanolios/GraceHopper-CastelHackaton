@@ -16,19 +16,19 @@ export default {
     return apiClient.get("/cities");
   },
 
-  getOneCityByName(cityName) {
-    return apiClient.get("cities/" + cityName);
-  },
+  // getOneCityByName(cityName) {
+  //   return apiClient.get("cities/" + cityName);
+  // },
 
-  addOneCity(cityData) {
-    return apiClient.post(
-      "/city",
-      cityData
-      // {
-      //   headers: {
-      //     Authorization: `Bearer ${userCred.token}`,
-      //   },
-      // }
-    );
-  },
+  // addOneCity(cityData) {
+  //   return apiClient.post(
+  //     "/city",
+  //     cityData
+  //     {
+  //       headers: {
+  //         Authorization: `Bearer ${userCred.token}`,
+  //       },
+  //     }
+  //   );
+  // },
 };
