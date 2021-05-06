@@ -18,6 +18,10 @@ export default new Vuex.Store({
     SET_CITY_BY_NAME(state, city) {
       state.city = city;
     },
+
+    ADD_CITY(state, city) {
+      state.cities.push(city);
+    },
   },
 
   actions: {
@@ -37,6 +41,17 @@ export default new Vuex.Store({
         .getEventById(cityName)
         .then((res) => {
           commit("SET_CITY_BY_NAME", res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+
+    addCity({ commit }, cityData) {
+      cityServices
+        .addCar(cityData)
+        .then((res) => {
+          commit("ADD_CITY", res.data);
         })
         .catch((err) => {
           console.log(err);
