@@ -37,7 +37,7 @@
     </v-row>
     <v-row>
       <v-col>
-        <AppTable />
+        <AppTable :city="cities [1]"/>
       </v-col>
       <v-col> </v-col>
       <v-col> </v-col>
