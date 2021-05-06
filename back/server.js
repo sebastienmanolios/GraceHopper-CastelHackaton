@@ -2,8 +2,10 @@ const express = require("express");
 const colors = require("colors");
 const dotenv = require("dotenv");
 const routes = require('./routes/city'); // import the routes
+const connectDB = require("./config/db");
 
 dotenv.config();
+connectDB();
 
 const app = express();
 app.use(express.json());
