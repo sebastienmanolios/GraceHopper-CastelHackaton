@@ -84,9 +84,11 @@
         url: 'http://{s}.tile.osm.org/{z}/{x}/{y}.png',
         center: [ 43.610769, 3.876716 ],
         zoom: 10,
-        markers: [
-          {id: 1, imageUrl: 'http://getdrawings.com/free-icon/red-dot-icon-53.png', coordinates: [ 43.610769, 3.876716 ]},
-          ],
+        marker:
+          [{
+            imageUrl: 'http://getdrawings.com/free-icon/red-dot-icon-53.png', 
+            coordinates: [0,0]
+          }],
 
           libelles: [
           {
@@ -154,7 +156,7 @@
 <style lang="scss" scoped>
   .map {
     position: absolute;
-    width: 75%;
+    width: 100%;
     height: 100%;
     overflow :hidden
   }
