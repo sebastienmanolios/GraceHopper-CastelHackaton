@@ -9,16 +9,16 @@ const userRoutes = require("./routes/user"); // import the routes
 const dataRoutes = require("./routes/data"); // import the routes
 const connectDB = require("./config/db");
 const cors = require("cors");
+const csv = require("csvtojson");
 
 dotenv.config();
 connectDB();
 
 const app = express();
-// const file = fs.createWriteStream("./data/dailyCSV.csv");
-// // const writeFileAsync = promisify(fs.writeFile)
-// http.get(process.env.DATA_URL, (res) => {
-//   res.pipe(file);
-// });
+const file = fs.createWriteStream("./data/dailyCSV.csv");
+http.get(process.env.DATA_URL, (res) => {
+  res.pipe(file);
+});
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
