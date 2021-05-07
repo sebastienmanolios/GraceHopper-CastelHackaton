@@ -16,9 +16,9 @@
         tile
         size="80"
       >
-      <!-- <v-img
-        src= {{ ImageSrc }}
-      ></v-img> -->
+      <v-img
+      :src="air"
+      ></v-img>
       </v-list-item-avatar>
     </v-list-item>
 
@@ -27,14 +27,19 @@
         outlined
         rounded
         text
+        :to="link.url"
+
       >
-        Button
+        Voir
       </v-btn>
     </v-card-actions>
   </v-card>
 </template>
 
 <script>
+import air from '@/assets/air.jpg'
+import ecole from '@/assets/ecole.jpg'
+import transport from '@/assets/transport.jpg'
   export default {
     props: {
       headline: {
@@ -45,14 +50,26 @@
         type: String,
         default: '' 
       },
-      // image: {
-      //   type: String,
-      //   default: '' 
-      // },
+      image: {
+        type: String,
+        default: '' 
+      },
+    },
+    data() {
+      return {
+        air,
+        transport,
+        ecole,
+        link: 
+          {
+            label:'',
+            url:'/air'
+          } 
+      }
     },
     computed: {
-      ImageSrc() {
-        return require('@/assets/ecole.jpg')
+      source() {
+        return this.image
       }
     },
   }
