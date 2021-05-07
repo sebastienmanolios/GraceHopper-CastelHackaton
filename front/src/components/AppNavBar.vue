@@ -29,7 +29,7 @@
               },
               {
                 label:'Air Quality',
-                url:'/air'
+                url:'/map'
               },
               {
                 label:'Login',

@@ -5,24 +5,33 @@
       flat
       height="200px"
     >
-      <v-toolbar
-        dense
-        floating
-      >
-      <v-text-field
-        hide-details
-        prepend-icon="mdi-magnify"
-        single-line
-      >
-      </v-text-field>
-      </v-toolbar>
+      <v-select
+        v-model="selectedCity"
+        label="Choisissez votre commune"
+        :items="cities"
+        item-text="lib_zone"
+        item-value="X"
+      ></v-select>
+
     </v-card>
   </v-container>
 </template>
 
 <script>
+import { mapState } from 'vuex'
   export default {
+    data() {
+      return {
+        selectedCity: null,
+        id: null,
+      }
+    },
+    computed: {
+      ...mapState(['cities'])
+    },
     
+    methods: {
+    },
   }
 </script>
 
