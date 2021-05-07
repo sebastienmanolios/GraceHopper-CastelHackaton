@@ -4,7 +4,7 @@
         <v-card
         class="pa-4"
         flat
-        height="200px"
+        height="100px"
       >
         <v-select
           v-model="selectedCity"
@@ -14,6 +14,37 @@
           item-value="_id"
         ></v-select>
       </v-card>
+
+<v-container>
+  <h2>{{ city.lib_zone }}</h2>
+  <v-simple-table>
+    <template v-slot:default>
+      <thead >
+        <tr>
+          <th 
+            style="font-size: 1.2rem" 
+            v-for="(libelle, index) in libelles" :key="index"
+          >
+            {{ libelle.label }}
+          </th>          
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ city.code_qual }}</td>
+          <td>{{ city.lib_qual }}</td>
+          <td>{{ city.code_o3 }}</td>
+          <td>{{ city.code_so2 }}</td>
+          <td>{{ city.code_no2 }}</td>
+          <td>{{ city.code_pm10 }}</td>
+          <td>{{ city.code_pm25 }}</td>
+        </tr>
+
+      </tbody>
+    </template>
+  </v-simple-table>
+</v-container>
+
       <l-map
         :center="center"
         :zoom="zoom"
@@ -35,6 +66,7 @@
   import { mapState } from 'vuex';
   import { LMap, LTileLayer } from 'vue2-leaflet';
   import MapMarker from '../components/map/MapMarkers'
+  import AppTable from '../components/AppTable'
   import "leaflet/dist/leaflet.css";
 
   export default {
@@ -43,6 +75,7 @@
       "l-map": LMap,
       "l-tile-layer": LTileLayer,
       "map-marker": MapMarker,
+      AppTable
     },
 
     data() {
@@ -56,6 +89,30 @@
             imageUrl: 'http://getdrawings.com/free-icon/red-dot-icon-53.png', 
             coordinates: [0,0]
           }],
+
+          libelles: [
+          {
+            label:'Code Qualité',
+          },
+          {
+            label:'Libellé Qualité',
+          },
+          {
+            label:'O3',
+          },
+          {
+            label:'SO2',
+          },
+          {
+            label: 'NO2',
+          },
+          {
+            label:'PM10',
+          },
+          {
+            label: 'PM25',
+          }
+        ]
       }
     },
 
@@ -102,9 +159,5 @@
     width: 100%;
     height: 100%;
     overflow :hidden
-  }
-
-  #map {
-    margin-top: 3em;
   }
 </style>

@@ -28,7 +28,7 @@
                 url:'/'
               },
               {
-                label:'Air Quality',
+                label:"Qualité de l'air",
                 url:'/map'
               },
               {

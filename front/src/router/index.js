@@ -21,14 +21,14 @@ const routes = [
     component: () => import("../views/Signup.vue"),
   },
   {
-    path: "/air",
+    path: "/map",
     name: "Air",
-    component: () => import("../views/Air.vue"),
+    component: () => import("../views/Map.vue"),
   },
   {
-    path: '/404',
-    name: '404',
-    component: () => import('../views/NotFound.vue')
+    path: "/404",
+    name: "404",
+    component: () => import("../views/NotFound.vue"),
   },
   // {
   //   path: '/NetworkIssue',
@@ -37,10 +37,10 @@ const routes = [
   // },
   // Will catch all navigation that doesn't match
   {
-    path: '*',
-    redirect: { name: '404' }
+    path: "*",
+    redirect: { name: "404" },
     // redirect: { name: '404', params: { resource: 'page' } }
-  }
+  },
 ];
 
 const router = new VueRouter({
