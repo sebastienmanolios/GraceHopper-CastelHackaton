@@ -64,6 +64,17 @@ router.get("/city/:lib_zone", getById);
  */
 router.put("/city/:lib_zone", updateCity);
 
+/**
+ * @swagger
+ * /cities/citiesovertime:
+ *  get:
+ *      summary: "Get All Cities Over time"
+ *      tags: [Get operations]
+ *      description: Get All CC
+ *      responses:
+ *          200:
+ *              description: Succes de la requête
+ */
 router.get("/citiesovertime", getCitiesOverTime);
 
 module.exports = router;
