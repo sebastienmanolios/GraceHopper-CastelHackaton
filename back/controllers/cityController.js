@@ -1,9 +1,14 @@
 const City = require("../models/cityModel");
+const CitiesOverTime = require("../models/cityOverTimeModel");
 
-
-// GET 
+// GET
 const getCities = async (req, res, next) => {
   const cities = await City.find({});
+  res.json(cities);
+};
+
+const getCitiesOverTime = async (req, res, next) => {
+  const cities = await CitiesOverTime.find({});
   res.json(cities);
 };
 
@@ -17,18 +22,18 @@ const getCities = async (req, res, next) => {
 //     } catch(err) {
 //         res.send(err);
 //         console.log(err);
-//     }    
+//     }
 // }
 
 const getById = (req, res) => {
-    let lib_zone = req.params.lib_zone;
-    City.findOne({lib_zone: lib_zone}, (err, data) =>{
-        if (err || !data) {
-            return res.json({message: 'this entry doesnt exist'})
-        } else {
-            return res.json(data);
-        }
-    })
+  let lib_zone = req.params.lib_zone;
+  City.findOne({ lib_zone: lib_zone }, (err, data) => {
+    if (err || !data) {
+      return res.json({ message: "this entry doesnt exist" });
+    } else {
+      return res.json(data);
+    }
+  });
 };
 
 // // UPDATE (NOT working)
@@ -46,7 +51,7 @@ const getById = (req, res) => {
 //         code_o3: req.body.code_o3,
 //         code_pm10: req.body.code_pm10,
 //         code_pm25: req.body.code_pm25
-//     }}, {new: true}, (err, data) =>{    
+//     }}, {new: true}, (err, data) =>{
 //         if(err || !data){
 //             console.log(data);
 //             console.log(city);
@@ -59,9 +64,12 @@ const getById = (req, res) => {
 // };
 
 const updateCity = (req, res) => {
-    let lib_zone = req.params.lib_zone;
-    console.log(req.params.lib_zone);
-    City.findOneAndUpdate({lib_zone:lib_zone}, {$set:{
+  let lib_zone = req.params.lib_zone;
+  console.log(req.params.lib_zone);
+  City.findOneAndUpdate(
+    { lib_zone: lib_zone },
+    {
+      $set: {
         X: req.body.X,
         Y: req.body.Y,
         lib_zone: req.body.lib_zone,
@@ -71,21 +79,24 @@ const updateCity = (req, res) => {
         code_so2: req.body.code_so2,
         code_o3: req.body.code_o3,
         code_pm10: req.body.code_pm10,
-        code_pm25: req.body.code_pm25
-    }},  {new: true}, (err, data) => {    
-        if(err || !data){
-            console.log(data);
-            return res.json({err})
-        } else {
-            console.log(data);
-            res.status(200);
-            return res.json({message: 'City updated'})
-        }
-    })
+        code_pm25: req.body.code_pm25,
+      },
+    },
+    { new: true },
+    (err, data) => {
+      if (err || !data) {
+        console.log(data);
+        return res.json({ err });
+      } else {
+        console.log(data);
+        res.status(200);
+        return res.json({ message: "City updated" });
+      }
+    }
+  );
 };
 
-
-module.exports = { getCities, updateCity, getById };
+module.exports = { getCities, updateCity, getById, getCitiesOverTime };
 
 /**
  * X: { type: Number, required: true },

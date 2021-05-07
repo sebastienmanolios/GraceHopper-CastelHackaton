@@ -1,8 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const { updateCity, getCities, getById } = require("../controllers/cityController");
-
-
+const {
+  updateCity,
+  getCities,
+  getCitiesOverTime,
+  getById,
+} = require("../controllers/cityController");
 
 /**
  * @swagger
@@ -11,18 +14,20 @@ const { updateCity, getCities, getById } = require("../controllers/cityControlle
  *      summary: "Get All Cities"
  *      tags: [Get operations]
  *      description: Get All CC
- *      responses: 
+ *      responses:
  *          200:
  *              description: Succes de la requête
  */
 router.get("/cities", getCities);
+router.put("/city/:lib_zone", updateCity);
+router.get("/city/:lib_zone", getById);
 
 /**
  * @swagger
  * /cities/city/{lib_zone}:
  *   get:
  *     summary: Get City ByName
- *     description: Return Single CC 
+ *     description: Return Single CC
  *     tags: [Get operations]
  *     parameters:
  *       - in: path
@@ -33,9 +38,9 @@ router.get("/cities", getCities);
  *     responses:
  *       200:
  *         description: Succes de la requête
- *         
+ *
  */
-router.get('/city/:lib_zone', getById);
+router.get("/city/:lib_zone", getById);
 
 // **** NEED TO IMPLEMENT THE BODY SENT***
 // **** -------------------------------***
@@ -44,9 +49,9 @@ router.get('/city/:lib_zone', getById);
  * /cities/city/{lib_zone}:
  *   put:
  *      summary: Update City ByName
- *      description: Update Single CC 
+ *      description: Update Single CC
  *      tags: [Update operation]
- *      parameters: 
+ *      parameters:
  *       - in: path
  *         name: lib_zone
  *         required: true
@@ -58,5 +63,7 @@ router.get('/city/:lib_zone', getById);
  *         description: Modification enregistrée
  */
 router.put("/city/:lib_zone", updateCity);
+
+router.get("/citiesovertime", getCitiesOverTime);
 
 module.exports = router;
