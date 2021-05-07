@@ -14,11 +14,11 @@ dotenv.config();
 connectDB();
 
 const app = express();
-const file = fs.createWriteStream("./data/dailyCSV.csv");
-// const writeFileAsync = promisify(fs.writeFile)
-http.get(process.env.DATA_URL, (res) => {
-  res.pipe(file);
-});
+// const file = fs.createWriteStream("./data/dailyCSV.csv");
+// // const writeFileAsync = promisify(fs.writeFile)
+// http.get(process.env.DATA_URL, (res) => {
+//   res.pipe(file);
+// });
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
