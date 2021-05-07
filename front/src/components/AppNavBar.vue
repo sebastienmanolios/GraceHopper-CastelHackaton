@@ -28,6 +28,10 @@
                 url:'/'
               },
               {
+                label:'Air Quality',
+                url:'/air'
+              },
+              {
                 label:'Login',
                 url:'/login'
               },

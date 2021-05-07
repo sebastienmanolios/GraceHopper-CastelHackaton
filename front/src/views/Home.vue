@@ -17,27 +17,32 @@
         cols="12"
       >
         <h2 class="headline mb-9 mt-9">
-          Nous vous proposons de juger par vous même des conditions agréables de notre belle région
+          Choisissez le theme que vous pensez indispensable à votre emmenagement puis sélectionner la ville désirée sur la carte
         </h2>
-        <h2>Pick your city !</h2>
         </v-col>
     </v-row>
     <v-row>
-      <v-col>
-        <AppSearch />
+      <v-col 
+          v-for="(theme,index) in themes" :key="index">
+        <AppCard 
+          :headline="theme.title"
+          :subtitle="theme.subtitle"
+ 
+        />
       </v-col>
     </v-row>
+    
+
+
+    
     <v-row>
       <v-col>
-        <!-- <p v-for="(city, index) in cities" :key="index">
-          {{ city }}
-        </p> -->
         <p> {{ cities [1]}}</p>
       </v-col>
     </v-row>
     <v-row>
       <v-col>
-        <AppTable :city="cities [1]"/>
+        <AppTable :city="cities[1]"/>
       </v-col>
       <v-col> </v-col>
       <v-col> </v-col>
@@ -49,13 +54,36 @@
 <script>
 import AppTable from '@/components/AppTable.vue';
 import AppSearch from '@/components/AppSearch.vue';
+import AppCard from '@/components/AppCard.vue';
 import { mapState } from 'vuex'
 
 
 export default {
   components: {
     AppSearch,
-    AppTable
+    AppTable,
+    AppCard
+  },
+  data() {
+    return {
+      themes : [
+        {
+          title: `Qualité de l'air`,
+          subtitle: 'Apercu des critères principaux',
+          image: 'air'
+        },
+        {
+          title: 'Transports',
+          subtitle: 'Trouver le meilleur réseau',
+          image: 'transport'
+        },
+        {
+          title: 'Ecoles publiques',
+          subtitle: 'Choisissez la bonne école',
+          image: "@/assets/ecole.jpg"
+        },
+      ],
+    }
   },
   created() {
     this.$store.dispatch('setCities')
