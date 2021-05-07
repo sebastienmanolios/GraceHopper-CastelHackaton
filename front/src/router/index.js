@@ -21,14 +21,9 @@ const routes = [
     component: () => import("../views/Signup.vue"),
   },
   {
-    path: "/cities",
-    name: "Cities",
-    component: () => import("../views/Cities.vue"),
-  },
-  {
-    path: "/map",
-    name: "Map",
-    component: () => import("../views/Map.vue"),
+    path: "/air",
+    name: "Air",
+    component: () => import("../views/Air.vue"),
   },
   {
     path: '/404',
