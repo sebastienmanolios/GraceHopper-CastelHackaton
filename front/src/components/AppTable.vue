@@ -12,12 +12,20 @@
         </tr>
       </thead>
       <tbody>
-        <tr
+        <!-- <tr
           v-for="item in data"
           :key="item.name"
         >
           <td>{{ item.name }}</td>
           <td>{{ item.rate }}</td>
+          
+        </tr> -->
+        <tr
+          v-for="(prop, value, index) in city"
+          :key="index"
+        >
+          <td>{{ value }}</td>
+          <td>{{ prop }}</td>
           
         </tr>
       </tbody>
@@ -33,6 +41,10 @@
         required: true
       }
     },
+    computed: {
+
+    },
+    
     data() {
       return {
         data: [
