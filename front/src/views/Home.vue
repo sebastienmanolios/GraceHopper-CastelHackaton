@@ -7,7 +7,7 @@
       mt-9
       >
         <h1 class="display-2 font-weight-bold mb-3 mt-10 text-center">
-          Installer vous en OCCITANIE
+          Installez vous en OCCITANIE
         </h1>
       </v-col>
     </v-row>
@@ -17,7 +17,7 @@
         cols="12"
       >
         <h2 class="headline mb-9 mt-9">
-          Choisissez le theme que vous pensez indispensable à votre emmenagement puis sélectionner la ville désirée sur la carte
+          Choisissez le thème que vous pensez indispensable à votre emmenagement puis sélectionner la ville désirée sur la carte
         </h2>
         </v-col>
     </v-row>
@@ -27,27 +27,11 @@
         <AppCard 
           :headline="theme.title"
           :subtitle="theme.subtitle"
- 
+          :image="theme.image"
         />
       </v-col>
     </v-row>
-    
-
-
-    
-    <v-row>
-      <v-col>
-        <p> {{ cities [1]}}</p>
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col>
-        <AppTable :city="cities[1]"/>
-      </v-col>
-      <v-col> </v-col>
-      <v-col> </v-col>
-    </v-row>
-        
+         
   </v-container>
 </template>
 
@@ -80,7 +64,7 @@ export default {
         {
           title: 'Ecoles publiques',
           subtitle: 'Choisissez la bonne école',
-          image: "@/assets/ecole.jpg"
+          image: "ecole"
         },
       ],
     }
