@@ -28,21 +28,25 @@
                 url:'/'
               },
               {
-                label:'Air Quality',
+                label:`Qualité de l'air`,
                 url:'/air'
               },
               {
-                label:'Login',
-                url:'/login'
+                label:'Transport',
+                url:'/transport'
+              },
+              {
+                label:'Ecoles',
+                url:'/ecole'
               },
               {
                 label:'Signup',
                 url:'/signup'
               },
               {
-                label: 'Map',
-                url: '/map'
-              }
+                label:'Login',
+                url:'/login'
+              },
             ]     
           }
     },
