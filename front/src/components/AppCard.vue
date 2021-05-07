@@ -63,7 +63,7 @@ import transport from '@/assets/transport.jpg'
         link: 
           {
             label:'',
-            url:'/air'
+            url:'/map'
           } 
       }
     },

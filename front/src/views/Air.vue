@@ -17,7 +17,7 @@ import AppTable from '@/components/AppTable.vue';
 
   export default {
     components: {
-    AppTable
+    AppTable,
     },
     computed: {
     ...mapState(['cities'])

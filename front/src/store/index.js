@@ -7,7 +7,10 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     cities: [],
-    city: {},
+    city: {
+      center: [],
+      coordinates: [],
+    },
   },
 
   mutations: {
@@ -15,9 +18,9 @@ export default new Vuex.Store({
       state.cities = cities;
     },
 
-    // SET_CITY_BY_NAME(state, city) {
-    //   state.city = city;
-    // },
+    SET_CITY_BY_ID(state, city) {
+      state.city = city;
+    },
 
     // ADD_CITY(state, city) {
     //   state.cities.push(city);
@@ -36,27 +39,13 @@ export default new Vuex.Store({
         });
     },
 
-    // setCityByName({ commit }, cityName) {
-    //   cityServices
-    //     .getEventById(cityName)
-    //     .then((res) => {
-    //       commit("SET_CITY_BY_NAME", res.data);
-    //     })
-    //     .catch((err) => {
-    //       console.log(err);
-    //     });
-    // },
-
-    // addCity({ commit }, cityData) {
-    //   cityServices
-    //     .addCar(cityData)
-    //     .then((res) => {
-    //       commit("ADD_CITY", res.data);
-    //     })
-    //     .catch((err) => {
-    //       console.log(err);
-    //     });
-    // },
+    setCityById({ commit }, cityId) {
+      this.state.cities.forEach((city) => {
+        if (city._id === cityId) {
+          commit("SET_CITY_BY_ID", city);
+        }
+      });
+    },
   },
 
   modules: {},

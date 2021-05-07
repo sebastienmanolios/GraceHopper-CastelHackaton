@@ -28,8 +28,8 @@
                 url:'/'
               },
               {
-                label:`Qualité de l'air`,
-                url:'/air'
+                label:"Qualité de l'air",
+                url:'/map'
               },
               {
                 label:'Transport',
