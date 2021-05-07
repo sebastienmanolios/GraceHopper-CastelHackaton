@@ -2,7 +2,7 @@
   <nav>
     <v-app-bar app dark style="background: #565857;">
       <v-toolbar-title style="font-size: 2rem"
-      >Air Cities</v-toolbar-title>
+      >Occ'MoveIn</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn 
         large
@@ -26,6 +26,10 @@
               {
                 label:'Home',
                 url:'/'
+              },
+              {
+                label:'Air Quality',
+                url:'/air'
               },
               {
                 label:'Login',
