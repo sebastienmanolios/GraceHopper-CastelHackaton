@@ -52,6 +52,7 @@ router.get('/city/:lib_zone', getById);
  *         required: true
  *         schema:
  *         type: string
+ *       - in: body
  *      responses: 
  *       200:
  *         description: Modification enregistrée

@@ -20,7 +20,7 @@ const swaggerOptions = {
   swaggerDefinition:{
     components: {},
       info: {
-          title: 'OCC API',
+          title: 'Occ\'MoveIn API',
           version: '1.0.0',
           description: 'API pour connaître la qualité de l\'air de votre Communauté de commune!'
       },
